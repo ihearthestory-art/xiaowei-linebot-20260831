@@ -1,0 +1,16 @@
+[
+  {
+    "id": "demo-a",
+    "name": "示範帳號 A",
+    "short": "帳號 A",
+    "theme": "標準方案",
+    "activation_code": "DEMOA1"
+  },
+  {
+    "id": "demo-b",
+    "name": "示範帳號 B",
+    "short": "帳號 B",
+    "theme": "進階方案",
+    "activation_code": "DEMOB2"
+  }
+]

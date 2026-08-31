@@ -1,0 +1,9 @@
+# 不進版控的東西：憑證、相依套件、SQLite 資料、log、暫存
+.env
+node_modules/
+data/
+*.log
+.smoke-data/
+__pycache__/
+HANDOFF.md
+.wrangler/

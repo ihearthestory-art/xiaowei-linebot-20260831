@@ -1,0 +1,24 @@
+# 僅供本機 Node.js 範例或非 Cloudflare 平台使用。
+# 複製成專案根目錄的 .env 後填入自己的值；.env 已在 .gitignore，絕對不要提交。
+
+# LINE Developers > Messaging API channel > Basic settings，驗 webhook 簽章用（必填）
+LINE_CHANNEL_SECRET=
+# 同一個 channel 的 Messaging API 分頁，呼叫 LINE API 用的長期 token（必填）
+LINE_CHANNEL_ACCESS_TOKEN=
+# HTTP 服務埠；部署平台通常會自己注入，本機預設 3000
+PORT=3000
+# SQLite 檔案放哪；容器內固定 /app/data，本機用 ./data
+DATA_DIR=./data
+# 對外可存取的網址，用來組 Flex hero 圖網址（<base>/assets/hero/xxx.jpg），沒填就不放圖
+PUBLIC_BASE_URL=
+# 可用管理指令（/狀態）的 LINE userId，逗號分隔；用 /我的id 查自己的
+ADMIN_USER_IDS=
+# 示範模式：1 = 未綁定時列出示範帳號的開通碼快捷鍵，正式上線設 0
+DEMO_MODE=1
+# 選配：每位學生在 Google AI Studio 建自己的免費 key；留白則維持 FAQ Bot，不會壞掉。
+# 不要把 key 貼進 GitHub、LINE 群組、截圖或作業。
+GEMINI_API_KEY=
+# 2026-08 官方穩定模型；若免費層顯示不可用，再依 AI Studio 的可用模型調整。
+GEMINI_MODEL=gemini-3.7-flash
+# 每位顧客每日最多 AI 問答數；0 代表關閉 AI。
+AI_DAILY_LIMIT=12

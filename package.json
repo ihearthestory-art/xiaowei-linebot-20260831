@@ -1,0 +1,29 @@
+{
+  "name": "xiaowei-linebot-20260831",
+  "version": "1.0.0",
+  "private": true,
+  "description": "xiaowei-restaurant 的 LINE bot（line-bot-kit 起）",
+  "type": "module",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --env-file=.env --watch src/server.js",
+    "test": "node tests/fake-line.mjs",
+    "catalog": "node scripts/render-catalog.mjs",
+    "admin": "node scripts/line-admin.mjs",
+    "preflight": "node scripts/preflight.mjs",
+    "bootstrap": "node scripts/bootstrap.mjs",
+    "cf:dev": "wrangler dev",
+    "cf:deploy": "wrangler deploy",
+    "cf:db": "wrangler d1 execute xiaowei-bot --remote --file=worker/schema.sql",
+    "cf:tail": "wrangler tail"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "wrangler": "^4"
+  }
+}

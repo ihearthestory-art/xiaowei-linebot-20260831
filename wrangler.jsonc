@@ -1,0 +1,26 @@
+{
+  // Cloudflare Workers 設定。學員用「Deploy to Cloudflare」按鈕部署時，
+  // Cloudflare 會依這個檔自動幫他建立 D1 資料庫並綁好。
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "xiaowei-linebot-20260831",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-08-01",
+  "compatibility_flags": ["nodejs_compat"],
+  // 讓 worker 可以直接 import 圖文選單底圖，拿到 ArrayBuffer 再丟給 LINE。
+  // 不這樣做就得把圖放到外部網址，多一個會壞掉的相依。
+  "rules": [
+    { "type": "Data", "globs": ["**/*.jpg"], "fallthrough": true }
+  ],
+  "observability": { "enabled": true },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "xiaowei-bot",
+      "database_id": "f092f37f-6f99-487c-8240-c845c9fa7bdf"   // 留空：學員用 Deploy 按鈕時 Cloudflare 會自動建立並填入
+    }
+  ]
+  // 機密不寫在這裡。用 npx wrangler secret put <NAME> 設定：
+  //   CLASS_JOIN_CODE  課程通行碼（擋不相干的人報名）
+  //   ADMIN_TOKEN      老師查全班進度用
+  //   GEMINI_API_KEY   選做
+}

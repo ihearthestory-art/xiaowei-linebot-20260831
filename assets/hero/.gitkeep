@@ -1,0 +1,2 @@
+卡片 hero 圖放這裡（.jpg）。views.js 用 hero("welcome") 會組出 PUBLIC_BASE_URL/assets/hero/welcome.jpg。
+沒設 PUBLIC_BASE_URL 或圖不存在時，卡片會自動不放圖，不會壞掉。建議 16:9 或 40:21，寬度 1024 以上。
